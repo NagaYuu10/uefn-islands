@@ -5,9 +5,23 @@
     {
       "rank": 1,
       "code": "1234-5678-9012",
-      "title": "Dummy Map",
+      "title": "Dummy Map 1",
       "author": "TestUser",
-      "thumb_url": "https://dummyimage.com/640x360/ccc/000.jpg&text=Dummy"
+      "thumb_url": "https://dummyimage.com/640x360/ccc/000.jpg&text=Dummy1"
+    },
+    {
+      "rank": 2,
+      "code": "2345-6789-0123",
+      "title": "Dummy Map 2",
+      "author": "TestUser",
+      "thumb_url": "https://dummyimage.com/640x360/ccc/000.jpg&text=Dummy2"
+    },
+    {
+      "rank": 3,
+      "code": "3456-7890-1234",
+      "title": "Dummy Map 3",
+      "author": "TestUser",
+      "thumb_url": "https://dummyimage.com/640x360/ccc/000.jpg&text=Dummy3"
     }
   ]
 }
