@@ -1,29 +1,29 @@
 name: build-json
 
-permissions:
-  contents: write
-
 on:
   schedule:
-    - cron: "0 * * * *"   # 毎時0分に実行 1時間おき
-  workflow_dispatch:       # 手動トリガーも残す
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
         with:
-          python-version: "3.x"
-      - name: Install deps
-        run: pip install -r requirements.txt
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
       - name: Run fetch script
         run: python scripts/fetch.py
       - name: Commit & Push
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add api/rankings/zonewars.json
-          git commit -m "update zonewars.json"
+          git commit -m "chore: update zonewars.json [skip ci]" || echo "no changes"
           git push
